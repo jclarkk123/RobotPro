@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const settings = require('./settings.json');
 const client = new Discord.Client();
 const newUsers = new Discord.Collection();
-let xp = require('./xp.json');
+let xp = require('.jsons/xp.json');
 
 // Variables
 client.ownerID = settings.ownerid;
@@ -85,7 +85,7 @@ if(nxtLvl <= xp[message.author.id].xp){
 
   message.channel.send(lvlup).then(msg => {msg.delete(5000)});
 }
-fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+fs.writeFile(".jsons/xp.json", JSON.stringify(xp), (err) => {
   if(err) console.log(err)
 });
 
